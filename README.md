@@ -1,8 +1,12 @@
-# Stars Align demo
+# Stars Align Engine Demi
 
-A Demo game for a [Pico-8](https://www.lexaloffle.com/pico-8.php) Platformer Engine.
+A All-in-one [Pico-8](https://www.lexaloffle.com/pico-8.php) Platformer Game/Engine.
 
 ## Game Design Document
 
-Although the [Game Design Document](./GDD.md) is written in French, it will be translated futurely.
+See the [Game Design Document](./GDD.md) for more  details and understanding.
+
+## Development
+
+This game is still in design. Only the sprites are made.
 
