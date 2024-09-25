@@ -1,6 +1,6 @@
 # Stars Align demo
 
-A Demo game for a Pico-8 Platformer Engine.
+A Demo game for a [Pico-8](https://www.lexaloffle.com/pico-8.php) Platformer Engine.
 
 ## Game Design Document
 
