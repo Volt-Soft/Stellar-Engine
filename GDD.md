@@ -1,30 +1,61 @@
-# Stars Align Demo
+## Stars Align Engine
 
-Inspiré du jeu [Stars Align Engine Demo](https://roblox-stars-align.fandom.com/wiki/Engine_Demo).
+Un Moteur de Platformer conçu pour [Pico-8](https://www.lexaloffle.com/pico-8.php).
 
-Ceci est le GDD (Game Design Document)
+## Moteur
 
-## Technologie et Moteur
+C'est un moteur de Platformer pour le jeu Stars Align (A venir).
 
-La Démo utilisera le Fantasy Console [Pico 8](https://www.lexaloffle.com/pico-8.php).
+**Saut : Plus le joueur appuie longtemps sur le bouton de saut, plus le saut est long.**
 
-## Moteur et Mods
+**Collisions : Une Collisions pousse légèrement le joueur vers la direction de l'objet.**
 
-Le jeu est conçu pour tester un Moteur Physique dans un jeu. 
+**Particules : Des particules sont générées quand le joueur meurt.**
 
-Il doit être facilement Moddable (ModDB).
+**Caméra : Le joueur sera toujours au centre de la Caméra.**
 
-## Niveaux
+## Référence : Palette de Couleurs
 
-Le jeu aura 4 niveaux de difficulté :
-- Facile
-- Normale
-- Difficile
-- Hardcore
+- 0 : Noir
+- 1 : Bleu Nuit
+- 2 : Rouge Foncé Rôsatre
+- 3 : Vert
+- 4 : MARRON MARRON
+- 5 : Gris
+- 6 : Gris Clair
+- 7 : Blanc
+- 8 : Rouge-Rose
+- 9 : Orange
+- 10 : Jean
+- 11 : Vert Fluo
+- 12 : Bleu Ciel
+- 13 : Terre Cuite Violette
+- 14 : Rose Bonbon
+- 15 : Peau Claire
 
-Et 4 Niveaux :
-- Champignon (Facile)
-- Ruines (Normale)
-- Désert (Difficile)
-- Skylands (Hardcore)
+## Jeu
 
+Le jeu sera en 1 Niveau, ayant 6 zones (Entre parenthèse sont les code couleurs) :
+
+- Simple (0)
+- Facile (14)
+- Normal (6)
+- Dur (Orange)
+- Hardcore (9)
+- Celeste (1)
+
+## Sauts
+
+- Sauts Muraux
+- Double Sauts
+- Glissement
+
+## Elements
+
+- Pics
+- Plateformes
+- Plateformes Mobiles
+- Portails
+- Ballons (Rebondissement)
+- Nuages (2 Secondes)
+- Jumper
