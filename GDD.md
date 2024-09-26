@@ -1,61 +1,49 @@
-## Stars Align Engine
+# Super Star 64 Demo
 
-Un Moteur de Platformer conçu pour [Pico-8](https://www.lexaloffle.com/pico-8.php).
+![Nintendo 64](https://img.shields.io/badge/Nintendo%2064-E4000F?style=for-the-badge&logoWidth=14)
+
+C'est un Jeu N64 comme [Super Mario 64](https://fr.wikipedia.org/wiki/Super_Mario_64)et [Super Blox 64](https://www.roblox.com/games/15644138782/SUPER-BLOX-64).
+
+## Objectif
+
+L'objectif du jeu est d'obtenir les 60 Etoiles du jeu.
+Optionellement, il peut faire les quêtes pour termiber le jeu à 100 %.
+
+## Mondes
+
+Mondes :
+
+- Hub 1 (4)
+- Vallée (6)
+
+- Hub 2 (6)
+- Parcours d'Ete (6)
+
+- Hub 3 (2)
+- Parcours d'automne (2)
+
+- Hub 4 (2)
+- Parcours sur la Lune (6)
+
+- Hub 5 (2)
+- Parcours d'Hiver (6)
+
+- Hub 7 (4)
+- Vallée Givrée (6)
+
+- Hub 8 (3)
+- La Luuuune (3)
+
+Le Total des Etoiles : 60.
 
 ## Moteur
 
-C'est un moteur de Platformer pour le jeu Stars Align (A venir).
+Le jeu aura son propre moteur de jeu, qui gèrera la physique suivante :
+Le Moteur sera nommé : SS64
 
-**Saut : Plus le joueur appuie longtemps sur le bouton de saut, plus le saut est long.**
-
-**Collisions : Une Collisions pousse légèrement le joueur vers la direction de l'objet.**
-
-**Particules : Des particules sont générées quand le joueur meurt.**
-
-**Caméra : Le joueur sera toujours au centre de la Caméra.**
-
-## Référence : Palette de Couleurs
-
-- 0 : Noir
-- 1 : Bleu Nuit
-- 2 : Rouge Foncé Rôsatre
-- 3 : Vert
-- 4 : MARRON MARRON
-- 5 : Gris
-- 6 : Gris Clair
-- 7 : Blanc
-- 8 : Rouge-Rose
-- 9 : Orange
-- 10 : Jean
-- 11 : Vert Fluo
-- 12 : Bleu Ciel
-- 13 : Terre Cuite Violette
-- 14 : Rose Bonbon
-- 15 : Peau Claire
-
-## Jeu
-
-Le jeu sera en 1 Niveau, ayant 6 zones (Entre parenthèse sont les code couleurs) :
-
-- Simple (0)
-- Facile (14)
-- Normal (6)
-- Dur (Orange)
-- Hardcore (9)
-- Celeste (1)
-
-## Sauts
-
-- Sauts Muraux
-- Double Sauts
-- Glissement
-
-## Elements
-
-- Pics
-- Plateformes
-- Plateformes Mobiles
-- Portails
-- Ballons (Rebondissement)
-- Nuages (2 Secondes)
-- Jumper
+- Saut
+- Double Saut
+- Saut sur les murs
+- Plongeon
+- Eau
+- Feu

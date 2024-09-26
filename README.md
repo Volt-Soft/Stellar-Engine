@@ -1,7 +1,6 @@
-# Stars Align Engine Demo
-[![Made With PICO-8](https://img.shields.io/badge/Made%20With-PICO--8-ff004d.svg?style=for-the-badge&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAlUlEQVQ4jWP8v5gBFTxOR%2BVXPfuPwp8SxIjCt%2BBG4TIxUBkMfgNZGIyi0IRmoobZxxeo0rcPocp%2FEEEJ08HvZaobyPj%2FjTpqmLAeJM2EtgMo3MHvZeqnw9X%2FXVHSUdhnP5Qw%2Fc%2B7CUVDS%2BsWFH6QpuyIT4cMT8xQBJI%2B1aHwj1%2F3RgnTVJbrKGH29egxFPWD38tUNxAAun4liexlTtMAAAAASUVORK5CYII%3D)](https://www.lexaloffle.com/pico-8.php)
+# Super Star 64
 
-A All-in-one [Pico-8](https://www.lexaloffle.com/pico-8.php) Platformer Game/Engine.
+A game, with custom game Engine, for the N64.
 
 ## Game Design Document
 
@@ -9,5 +8,4 @@ See the [Game Design Document](./GDD.md) for more  details and understanding.
 
 ## Development
 
-This game is still in design. Only the sprites are made.
-
+This game is still in design. Nothing is made, and advancement is only done on the GDD.
