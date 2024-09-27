@@ -39,11 +39,11 @@ Le Total des Etoiles : 60.
 ## Moteur
 
 Le jeu aura son propre moteur de jeu, qui gèrera la physique suivante :
-Le Moteur sera nommé : SS64
+Le Moteur sera nommé : Stellar Engine
 
 - Saut
 - Double Saut
 - Saut sur les murs
 - Plongeon
-- Eau
-- Feu
+- Plateformes
+- Collision
