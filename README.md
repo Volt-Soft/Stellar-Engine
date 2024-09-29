@@ -5,6 +5,7 @@ A game, with custom game Engine, made with SDL.
 ## Game Design Document
 
 See the [Game Design Document](./GDD.md) for more  details and understanding.
+For the engine, see [ENGINE.md](./ENGINE.md)
 
 ## Development
 
