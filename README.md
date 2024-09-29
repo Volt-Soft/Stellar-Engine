@@ -1,4 +1,4 @@
-# Super Star 64
+# Super Stars Align
 
 A game, with custom game Engine, made with SDL.
 
