@@ -1,6 +1,6 @@
 # Super Star 64
 
-A game, with custom game Engine, for the N64.
+A game, with custom game Engine, made with SDL.
 
 ## Game Design Document
 
