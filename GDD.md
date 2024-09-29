@@ -1,7 +1,5 @@
 # Super Stars Align
 
-![Nintendo 64](https://img.shields.io/badge/Nintendo%2064-E4000F?style=for-the-badge&logoWidth=14)
-
 C'est un platformer inspiré de [Super Blox 64](https://www.roblox.com/games/15644138782/SUPER-BLOX-64)
 
 ## Objectif
