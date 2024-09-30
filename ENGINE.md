@@ -2,6 +2,10 @@
 
 Le jeu aura son propre moteur de jeu, le Stellar Engine. 
 
+## Technologie
+
+Le moteur utilisera SDL pour le cœur et OpenGL pour le rendering.
+
 ## Physique
 
 Le Moteur gèrera les aspects suivants :
@@ -14,6 +18,13 @@ Le Moteur gèrera les aspects suivants :
 - Plateformes
 - Collision
 
-## Edition de Niveaux
+## Render, load et collisions
 
-Le moteur sera centré vers l'édition de niveaux, qui permettra de placer des plateformes et autres objets 3d sur la carte, pour faciliter le développement de Super Stars Align.
+Le moteur sera centré sur le load et rendu de modèles 3D, pour faciliter son développement.
+
+Mais, il aura un système de collisions avec soit :
+
+- Des sphères autour des blocs
+- AABB
+
+Le moteur chargera des fichiers 3D `.obj` ou `.fbx`.
