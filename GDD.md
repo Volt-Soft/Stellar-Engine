@@ -30,11 +30,6 @@ Mondes :
 - Hub 7 (4)
 - Vallée Givrée (6)
 
-- Hub Glaxie
-- Monde 1 (1)
-- Monde 2 (1)
-- Monde 3 (1)
-
 Le Total des Etoiles : 60.
 
 ## Mouvements
