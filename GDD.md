@@ -18,10 +18,10 @@ Mondes :
 - Hub 2 (6)
 - Parcours d'Ete (6)
 
-- Hub 3 (2)
-- Parcours d'automne (2)
+- Hub 3 (4)
+- Parcours d'automne (6)
 
-- Hub 4 (2)
+- Hub 4 (4)
 - Parcours sur la Lune (6)
 
 - Hub 5 (2)
