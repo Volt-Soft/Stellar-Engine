@@ -16,5 +16,3 @@ Mais, il aura un système de collisions avec soit :
 - AABB
 
 Le moteur chargera des objets 3D provenant de logiciels de Modélisation comme [Blender](https://fr.m.wikipedia.org/wiki/Blender), qui seront la carte du jeu, ainsi que le modèle du joueur.
-
-##
