@@ -4,6 +4,8 @@ Le jeu aura son propre moteur de jeu, le Stellar Engine.
 
 ## Technologie
 
+![OpenGL](https://img.shields.io/badge/OpenGL-FFFFFF?style=for-the-badge&logo=OpenGL)
+
 Le moteur utilisera SDL pour le cœur et OpenGL pour le rendering.
 
 ## Render, load et collisions
