@@ -25,3 +25,16 @@ Le moteur chargera des objets 3D provenant de logiciels de Modélisation comme [
 3. Collisions
 
 ### Détails des étapes
+
+#### Load
+
+Pour charger des fichiers 3D, le moteur aura une UI, avec un bouton pour charger le fichier via l'explorateur.
+
+#### Rendu
+
+Le jeu utilisera comme mentionné ci-dessus OpenGL et [GLut](https://en.m.wikipedia.org/wiki/OpenGL_Utility_Toolkit) pour faire le rendu, qui sera affiché au milieu de l'UI.
+
+#### Collisions
+
+Le moteur utilisera de l'AABB our détécter la collision.
+
