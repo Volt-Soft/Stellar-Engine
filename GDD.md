@@ -1,6 +1,6 @@
 # Super Stars Align
 
-C'est un platformer inspiré de [Super Blox 64](https://www.roblox.com/games/15644138782/SUPER-BLOX-64)
+C'est un platformer inspiré de [Super Blox 64](https://www.roblox.com/games/15644138782/SUPER-BLOX-64).
 
 ## Objectif
 
