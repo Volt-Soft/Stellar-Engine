@@ -37,6 +37,16 @@ Mondes :
 
 Le Total des Etoiles : 60.
 
+## Mouvements
+
+- Saut
+- Double Saut
+- Saut sur les murs
+- Plongeon
+- Accroupissement
+- Plateformes
+- Collision
+
 ## Moteur
 
 Voir [ENGINE.md](./ENGINE.md)
