@@ -2,14 +2,13 @@
 
 A game engine in pure C made with OpenGL and SDL.
 
-## Game Design Document
+## Engine Document
 
-See the [Game Design Document](./GDD.md) for more  details and understanding.
-For the engine, see [ENGINE.md](./ENGINE.md)
+See [ENGINE.md](./ENGINE.md) for further reading (French).
 
 ## Development
 
-This game is still in design. Nothing is made, and advancement is only done on the GDD.
+The Engine is still in design phase, but I started it's development alongside design.
 
 ## License
 
