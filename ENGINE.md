@@ -34,6 +34,15 @@ Le jeu utilisera comme mentionné ci-dessus OpenGL et pour faire le rendu, inclu
 
 Le moteur utilisera SDL pour gérer les entrées.
 
-## Notes
+## Fonctionnement et structure
 
 Le moteur sera dans un dossier séparé, qui aura `engine.h`, `engine.c`, et qui seront inclus dans le fichier principal du jeu.
+
+### Fonctions
+
+- engineInit
+- engineLoadModel
+- engineRenderScene
+- engineSetCameraPosition
+- engineProcessInput
+- engineGetKeyState
