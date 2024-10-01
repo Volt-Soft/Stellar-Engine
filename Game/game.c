@@ -1,17 +1,19 @@
+#include <stdio.h>
 #include "../src/engine.h"
 
-int main() {
-    engineInit();  // Initialiser le moteur
+int main(int argc, char* argv[]) {
+    Model model;  // Créer une instance du modèle
 
-    engineLoadModel("test.obj");  // Charger un modèle de carte
+    engineInit();
+    engineLoadModel("./test.obj", &model);  // Charger le modèle
 
+    // Boucle principale
     while (1) {
-        engineProcessInput();  // Gérer les inputs
-        engineRenderScene();  // Rendre la scène
+        engineProcessInput();
+        engineRenderScene(&model);  // Rendre la scène avec le modèle
     }
 
-    engineCleanup();  // Libérer la mémoire avant de quitter
-
+    engineCleanup();
     return 0;
 }
 

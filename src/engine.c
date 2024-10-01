@@ -1,123 +1,112 @@
-#include "engine.h"
-#include <SDL2/SDL.h>
-#include <GL/gl.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-
-typedef struct {
-    float x, y, z;  // Coordonnées des sommets
-} Vertex;
-
-typedef struct {
-    Vertex* vertices;  // Tableau des sommets
-    unsigned int* indices;  // Tableau des indices des faces
-    size_t vertexCount;  // Nombre de sommets
-    size_t indexCount;  // Nombre d'indices
-} Model;
+#include <SDL.h>    // Inclure la bibliothèque SDL
+#include <GL/gl.h>  // Inclure OpenGL
+#include "engine.h"
 
 SDL_Window* window;
 SDL_GLContext glContext;
-Model model;  // Le modèle 3D courant
 
+// Fonction d'initialisation
 void engineInit() {
-    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS);
-    window = SDL_CreateWindow("Stellar Engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_OPENGL);
+    // Initialiser SDL
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+        printf("Erreur d'initialisation SDL: %s\n", SDL_GetError());
+        exit(1);
+    }
+
+    // Créer une fenêtre avec un contexte OpenGL
+    window = SDL_CreateWindow("Stellar Engine",
+                                SDL_WINDOWPOS_CENTERED,
+                                SDL_WINDOWPOS_CENTERED,
+                                800, 600,
+                                SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
+    if (!window) {
+        printf("Erreur de création de la fenêtre: %s\n", SDL_GetError());
+        SDL_Quit();
+        exit(1);
+    }
+
+    // Créer le contexte OpenGL
     glContext = SDL_GL_CreateContext(window);
-    glEnable(GL_DEPTH_TEST);  // Activer le test de profondeur pour un rendu 3D correct
-}
-
-void engineLoadModel(const char* modelPath) {
-    FILE* file = fopen(modelPath, "r");
-    if (!file) {
-        printf("Impossible de charger le fichier %s\n", modelPath);
-        return;
+    if (!glContext) {
+        printf("Erreur de création du contexte OpenGL: %s\n", SDL_GetError());
+        SDL_DestroyWindow(window);
+        SDL_Quit();
+        exit(1);
     }
 
-    // Initialiser les structures pour stocker les sommets et indices
-    model.vertices = NULL;  
-    model.indices = NULL;  
-    model.vertexCount = 0;
-    model.indexCount = 0;
+    // Initialiser les paramètres d'OpenGL
+    glEnable(GL_DEPTH_TEST);
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);  // Couleur de fond (noir)
+}
 
-    char line[128];
-    while (fgets(line, sizeof(line), file)) {
-        if (strncmp(line, "v ", 2) == 0) {  // Ligne contenant un sommet
-            model.vertices = realloc(model.vertices, sizeof(Vertex) * (model.vertexCount + 1));
-            if (!model.vertices) {
-                printf("Erreur d'allocation mémoire\n");
-                fclose(file);
-                return;
-            }
-            Vertex vertex;
-            if (sscanf(line, "v %f %f %f", &vertex.x, &vertex.y, &vertex.z) != 3) {
-                printf("Erreur de format dans le fichier de sommet: %s\n", line);
-                fclose(file);
-                return;
-            }
-            model.vertices[model.vertexCount++] = vertex;
-        } else if (strncmp(line, "f ", 2) == 0) {  // Ligne contenant une face
-            unsigned int vertexIndex[3];
-            if (sscanf(line, "f %d %d %d", &vertexIndex[0], &vertexIndex[1], &vertexIndex[2]) != 3) {
-                printf("Erreur de format dans le fichier de face: %s\n", line);
-                fclose(file);
-                return;
-            }
-            model.indices = realloc(model.indices, sizeof(unsigned int) * (model.indexCount + 3));
-            if (!model.indices) {
-                printf("Erreur d'allocation mémoire\n");
-                fclose(file);
-                return;
-            }
-            model.indices[model.indexCount++] = vertexIndex[0] - 1;  // Les indices commencent à 1 dans les fichiers OBJ
-            model.indices[model.indexCount++] = vertexIndex[1] - 1;
-            model.indices[model.indexCount++] = vertexIndex[2] - 1;
+// Fonction pour charger un modèle 3D
+void engineLoadModel(const char* modelPath, Model* model) {
+    // Exemple simple : charger un cube
+    // Remplacez ceci par votre logique de chargement de modèle réelle
+    float cubeVertices[8][3] = {
+        {-1.0f, -1.0f,  1.0f},
+        { 1.0f, -1.0f,  1.0f},
+        { 1.0f,  1.0f,  1.0f},
+        {-1.0f,  1.0f,  1.0f},
+        {-1.0f, -1.0f, -1.0f},
+        { 1.0f, -1.0f, -1.0f},
+        { 1.0f,  1.0f, -1.0f},
+        {-1.0f,  1.0f, -1.0f}
+    };
+
+    // Copier les sommets dans la structure de modèle
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 3; j++) {
+            model->vertices[i][j] = cubeVertices[i][j];
         }
     }
-
-    fclose(file);
-    printf("Modèle %s chargé avec %zu sommets et %zu faces\n", modelPath, model.vertexCount, model.indexCount / 3);
+    printf("Modèle chargé à partir de: %s\n", modelPath);
 }
 
-void engineRenderScene() {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);  // Effacer l'écran et le buffer de profondeur
+// Fonction pour rendre la scène avec le modèle
+void engineRenderScene(Model* model) {
+    // Effacer le tampon de couleur et le tampon de profondeur
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    if (model.vertexCount > 0 && model.indexCount > 0) {
-        glBegin(GL_TRIANGLES);
-        for (size_t i = 0; i < model.indexCount; i++) {
-            if (model.indices[i] < model.vertexCount) {  // Vérifie si l'indice est valide
-                Vertex vertex = model.vertices[model.indices[i]];
-                glVertex3f(vertex.x, vertex.y, vertex.z);
-            } else {
-                printf("Indice %d est hors limites!\n", model.indices[i]);
-            }
-        }
-        glEnd();
-    } else {
-        printf("Aucun modèle à rendre.\n");
+    // Rendre le modèle
+    glBegin(GL_QUADS);
+    // Face avant
+    glColor3f(1.0f, 0.0f, 0.0f);  // Rouge
+    for (int i = 0; i < 4; i++) {
+        glVertex3fv(model->vertices[i]);  // Utiliser les sommets du modèle
     }
+    glEnd();
 
-    SDL_GL_SwapWindow(window);  // Afficher à l'écran
+    // Vous pouvez ajouter d'autres faces ici
+
+    // Échanger les tampons pour afficher la scène
+    SDL_GL_SwapWindow(window);
 }
 
+// Fonction pour traiter les inputs (clavier/souris)
 void engineProcessInput() {
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
         if (event.type == SDL_QUIT) {
-            // Gérer la fermeture de la fenêtre
-            SDL_Quit();
+            engineCleanup();
             exit(0);
         }
-        // Gérer les autres événements clavier/souris
     }
 }
 
+// Fonction pour libérer la mémoire
 void engineCleanup() {
-    free(model.vertices);  // Libérer la mémoire des sommets
-    free(model.indices);   // Libérer la mémoire des indices
+    SDL_GL_DeleteContext(glContext);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+    printf("Nettoyage du moteur.\n");
 }
 
+// Fonction pour récupérer l'état d'une touche
 int engineGetKeyState(int key) {
-    const Uint8* keystate = SDL_GetKeyboardState(NULL);
-    return keystate[key];
+    const Uint8* state = SDL_GetKeyboardState(NULL);
+    return state[key];
 }
+
