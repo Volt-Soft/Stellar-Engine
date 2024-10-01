@@ -1,4 +1,0 @@
-/home/fbdev/dev/Stellar-Engine/build/CMakeFiles/stellarengine.dir
-/home/fbdev/dev/Stellar-Engine/build/CMakeFiles/game.dir
-/home/fbdev/dev/Stellar-Engine/build/CMakeFiles/edit_cache.dir
-/home/fbdev/dev/Stellar-Engine/build/CMakeFiles/rebuild_cache.dir

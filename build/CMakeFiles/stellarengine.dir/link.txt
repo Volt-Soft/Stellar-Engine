@@ -1,2 +1,0 @@
-/sbin/ar qc libstellarengine.a CMakeFiles/stellarengine.dir/src/engine.c.o
-/sbin/ranlib libstellarengine.a
