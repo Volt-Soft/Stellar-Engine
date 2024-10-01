@@ -40,3 +40,6 @@ Le jeu utilisera comme mentionné ci-dessus OpenGL et [GLut](https://en.m.wikipe
 
 Le moteur utilisera SDL pour gérer les entrées.
 
+## Notes
+
+Le moteur sera dans un dossier séparé, qui aura `engine.h`, `engine.c`, et qui seront inclus dans le fichier principal du jeu.
