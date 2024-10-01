@@ -17,8 +17,8 @@ Le moteur chargera des objets 3D provenant de logiciels de modélisation comme [
 ## Étapes
 
 1. Loader d'objets 3D
-2. Rendu avec OpenGL (et Glut)
-3. Gestions des entrées (Input) 
+2. Rendu avec OpenGL
+3. Gestions des entrées avec SDL (Input) 
 
 ### Détails des étapes
 
