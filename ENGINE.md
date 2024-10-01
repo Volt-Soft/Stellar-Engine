@@ -24,6 +24,7 @@ Le moteur chargera des objets 3D provenant de logiciels de Modélisation comme [
 
 1. Loader d'objets 3D
 2. Rendu avec OpenGL (et Glut)
+3. Gestions des entrées (Input) 
 
 ### Détails des étapes
 
@@ -34,4 +35,8 @@ Pour charger des fichiers 3D, le moteur aura une UI, avec un bouton pour charger
 #### Rendu
 
 Le jeu utilisera comme mentionné ci-dessus OpenGL et [GLut](https://en.m.wikipedia.org/wiki/OpenGL_Utility_Toolkit) pour faire le rendu, qui sera affiché au milieu de l'UI.
+
+#### Inputs
+
+Le moteur utilisera SDL pour gérer les entrées.
 
