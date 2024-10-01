@@ -13,4 +13,4 @@ This game is still in design. Nothing is made, and advancement is only done on t
 
 ## License
 
-Distribute, modify and use freely under the terms of the [ZLib license.](./LICENSE)
+Distribute, modify and use freely under the terms of the [ZLib license](./LICENSE).
