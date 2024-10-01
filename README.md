@@ -1,5 +1,7 @@
 #  Stellar Engine
 
+![OpenGL](https://img.shields.io/badge/OpenGL-FFFFFF?style=for-the-badge&logo=OpenGL)
+
 A game engine in pure C made with OpenGL and SDL.
 
 ## Engine Document
