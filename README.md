@@ -1,6 +1,6 @@
-# Super Stars Align
+#  Stellar Engine
 
-A game, with custom game Engine, made with SDL.
+A game engine in pure C made with OpenGL and SDL.
 
 ## Game Design Document
 
@@ -10,3 +10,7 @@ For the engine, see [ENGINE.md](./ENGINE.md)
 ## Development
 
 This game is still in design. Nothing is made, and advancement is only done on the GDD.
+
+## License
+
+Distribute, modify and use freely under the terms of the [ZLib license.](./LICENSE)
