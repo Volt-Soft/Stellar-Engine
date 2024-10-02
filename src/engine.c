@@ -43,27 +43,12 @@ void engineInit() {
 
 // Fonction pour charger un modèle 3D
 void engineLoadModel(const char* modelPath, Model* model) {
-    // TODO : Implémenter
+    // TODO : Implémenter engineLoadModel
 }
 
 // Fonction pour rendre la scène avec le modèle
 void engineRenderScene(Model* model) {
-    // Effacer le tampon de couleur et le tampon de profondeur
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    // Rendre le modèle
-    glBegin(GL_QUADS);
-    // Face avant
-    glColor3f(1.0f, 0.0f, 0.0f);  // Rouge
-    for (int i = 0; i < 4; i++) {
-        glVertex3fv(model->vertices[i]);  // Utiliser les sommets du modèle
-    }
-    glEnd();
-
-    // Vous pouvez ajouter d'autres faces ici
-
-    // Échanger les tampons pour afficher la scène
-    SDL_GL_SwapWindow(window);
+    // TODO : Implémenter engineRenderScene
 }
 
 // Fonction pour traiter les inputs (clavier/souris)
