@@ -43,26 +43,7 @@ void engineInit() {
 
 // Fonction pour charger un modèle 3D
 void engineLoadModel(const char* modelPath, Model* model) {
-    // Exemple simple : charger un cube
-    // Remplacez ceci par la logique de chargement de modèle réelle
-    float cubeVertices[8][3] = {
-        {-1.0f, -1.0f,  1.0f},
-        { 1.0f, -1.0f,  1.0f},
-        { 1.0f,  1.0f,  1.0f},
-        {-1.0f,  1.0f,  1.0f},
-        {-1.0f, -1.0f, -1.0f},
-        { 1.0f, -1.0f, -1.0f},
-        { 1.0f,  1.0f, -1.0f},
-        {-1.0f,  1.0f, -1.0f}
-    };
-
-    // Copier les sommets dans la structure de modèle
-    for (int i = 0; i < 8; i++) {
-        for (int j = 0; j < 3; j++) {
-            model->vertices[i][j] = cubeVertices[i][j];
-        }
-    }
-    printf("Modèle chargé à partir de: %s\n", modelPath);
+    // TODO : Implémenter
 }
 
 // Fonction pour rendre la scène avec le modèle
