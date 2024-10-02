@@ -44,7 +44,7 @@ void engineInit() {
 // Fonction pour charger un modèle 3D
 void engineLoadModel(const char* modelPath, Model* model) {
     // Exemple simple : charger un cube
-    // Remplacez ceci par votre logique de chargement de modèle réelle
+    // Remplacez ceci par la logique de chargement de modèle réelle
     float cubeVertices[8][3] = {
         {-1.0f, -1.0f,  1.0f},
         { 1.0f, -1.0f,  1.0f},
