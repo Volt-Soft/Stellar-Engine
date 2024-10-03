@@ -3,14 +3,17 @@
 
 #  Stellar Engine
 
-A game engine made in C, [SDL](https://libsdl.com), 
+A game engine made in C and uses SDL and OpenGL.
+
 ## Engine Document
 
 See [ENGINE.md](./ENGINE.md) for further reading (French).
 
 ## Development
 
-The Engine is still in design phase, but I started it's development alongside design.
+The engine's development phase has started, and the Alpha version will soon come out.
+
+## Contributing
 
 ## License
 
