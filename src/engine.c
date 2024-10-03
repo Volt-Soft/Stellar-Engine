@@ -67,7 +67,6 @@ void engineCleanup() {
     SDL_GL_DeleteContext(glContext);
     SDL_DestroyWindow(window);
     SDL_Quit();
-    printf("Nettoyage du moteur.\n");
 }
 
 // Fonction pour récupérer l'état d'une touche
