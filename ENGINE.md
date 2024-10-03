@@ -5,34 +5,31 @@ Le jeu aura son propre moteur de jeu, le Stellar Engine.
 
 ## Technologie
 
-![OpenGL](https://img.shields.io/badge/OpenGL-FFFFFF?style=for-the-badge&logo=OpenGL)
-
-Le moteur utilisera SDL pour le cœur et OpenGL pour le rendering.
+Le moteur utilisera [SDL](https://libsdl.com), [OpenGL](https://opengl.org/) and [GLut](https://www.opengl.org/resources/libraries/glut/glut_downloads.php).
 
 ## Render, load 
 
-Le moteur sera centré sur le load et rendu de modèles 3D, pour faciliter son développement.
-Le moteur chargera des objets 3D provenant de logiciels de modélisation comme [Blender](https://fr.m.wikipedia.org/wiki/Blender), qui seront la carte du jeu, ainsi que le modèle du joueur.
+Le moteur sera centré sur le chargement et rendu de modèles 3D, pour faciliter son développement.
+Le moteur chargera des objets 3D provenant de logiciels de modélisation comme [Blender](https://fr.m.wikipedia.org/wiki/Blender), pouvant être la carte du jeu, par exemple.
 
 ## Étapes
-
-1. Loader d'objets 3D
-2. Rendu avec OpenGL
-3. Gestions des entrées avec SDL (Input) 
-
+- [ ] Getstion des I/O
+- [ ] Chargements d'objets 3D
+- [ ] Rendu des objets 3D
+      
 ### Détails des étapes
 
-#### Load
+#### Chargement
 
-Pour charger des fichiers 3D, une fonction, inclue dans `engine.h`.
+Pour charger des fichiers 3D, l'utilisateur apellera `engineLoadModel`.
 
 #### Rendu
 
-Le jeu utilisera comme mentionné ci-dessus OpenGL et pour faire le rendu, inclue dans `engine.h`.
+Pour rendre la scène 3D, l'utlisateur apellera `engineRenderScene`.
 
 #### Inputs
 
-Le moteur utilisera SDL pour gérer les entrées.
+Pour gérer les entrées et sorties, le moteur utilisera SDL.
 
 ## Fonctionnement et structure
 
@@ -46,3 +43,4 @@ Le moteur sera dans un dossier séparé, qui aura `engine.h`, `engine.c`, et qui
 - engineSetCameraPosition
 - engineProcessInput
 - engineGetKeyState
+- engineClean
