@@ -1,9 +1,9 @@
+
+![Screenshot 2024-10-02 at 14-32-14 Brandmark - make your logo in minutes](https://github.com/user-attachments/assets/ca47155b-fc28-48b7-bf2d-ec726dd5f3d2)
+
 #  Stellar Engine
- ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
-![OpenGL](https://img.shields.io/badge/OpenGL-FFFFFF?style=for-the-badge&logo=OpenGL)
 
-A game engine in pure C made with OpenGL and SDL.
-
+A game engine made in C, [SDL](https://libsdl.com), 
 ## Engine Document
 
 See [ENGINE.md](./ENGINE.md) for further reading (French).
