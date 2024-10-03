@@ -13,7 +13,7 @@ Le moteur sera centré sur le chargement et rendu de modèles 3D, pour faciliter
 Le moteur chargera des objets 3D provenant de logiciels de modélisation comme [Blender](https://fr.m.wikipedia.org/wiki/Blender), pouvant être la carte du jeu, par exemple.
 
 ## Étapes
-- [ ] Getstion des I/O
+- [x] Getstion des I/O
 - [ ] Chargements d'objets 3D
 - [ ] Rendu des objets 3D
       
