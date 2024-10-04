@@ -3,7 +3,7 @@
 
 #  Stellar Engine
 
-A game engine made in C and uses SDL and OpenGL.
+A 2D game engine made in C and uses SDL.
 
 ## Engine Document
 
