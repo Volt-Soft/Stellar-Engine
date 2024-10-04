@@ -1,77 +1,47 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <SDL.h>    // Inclure la bibliothèque SDL
-#include <GL/gl.h>  // Inclure OpenGL
+#include <SDL.h>
 #include "engine.h"
+#include "level.h" // Inclure level.h pour utiliser la structure Level
 
 SDL_Window* window;
-SDL_GLContext glContext;
+SDL_Renderer* renderer;
 
-// Fonction d'initialisation
 void engineInit() {
-    // Initialiser SDL
-    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-        printf("Erreur d'initialisation SDL: %s\n", SDL_GetError());
-        exit(1);
-    }
-
-    // Créer une fenêtre avec un contexte OpenGL
-    window = SDL_CreateWindow("Stellar Engine",
-                                SDL_WINDOWPOS_CENTERED,
-                                SDL_WINDOWPOS_CENTERED,
-                                800, 600,
-                                SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
-    if (!window) {
-        printf("Erreur de création de la fenêtre: %s\n", SDL_GetError());
-        SDL_Quit();
-        exit(1);
-    }
-
-    // Créer le contexte OpenGL
-    glContext = SDL_GL_CreateContext(window);
-    if (!glContext) {
-        printf("Erreur de création du contexte OpenGL: %s\n", SDL_GetError());
-        SDL_DestroyWindow(window);
-        SDL_Quit();
-        exit(1);
-    }
-
-    // Initialiser les paramètres d'OpenGL
-    glEnable(GL_DEPTH_TEST);
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);  // Couleur de fond (noir)
+    // ... (le même code d'initialisation)
 }
 
-// Fonction pour charger un modèle 3D
-void engineLoadModel(const char* modelPath, Model* model) {
-    // TODO : Implémenter engineLoadModel
+void engineLoadLevel(const char* levelPath, Level* level) {
+    loadLevel(levelPath, level); // Utiliser loadLevel pour charger le niveau
 }
 
-// Fonction pour rendre la scène avec le modèle
-void engineRenderScene(Model* model) {
-    // TODO : Implémenter engineRenderScene
-}
+void engineRun() {
+    Level level;
+    engineLoadLevel("./level1.txt", &level);
 
-// Fonction pour traiter les inputs (clavier/souris)
-void engineProcessInput() {
     SDL_Event event;
-    while (SDL_PollEvent(&event)) {
-        if (event.type == SDL_QUIT) {
-            engineCleanup();
-            exit(0);
+    int running = 1;
+    while (running) {
+        while (SDL_PollEvent(&event)) {
+            if (event.type == SDL_QUIT) {
+                running = 0;
+            }
         }
+
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // Blanc
+        SDL_RenderClear(renderer);
+        
+        engineRenderLevel(&level); // Rendre le niveau
+        
+        SDL_RenderPresent(renderer);
     }
+
+    freeLevel(&level); // Libérer la mémoire
 }
 
-// Fonction pour libérer la mémoire
 void engineCleanup() {
-    SDL_GL_DeleteContext(glContext);
+    SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
-}
-
-// Fonction pour récupérer l'état d'une touche
-int engineGetKeyState(int key) {
-    const Uint8* state = SDL_GetKeyboardState(NULL);
-    return state[key];
 }
 

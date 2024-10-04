@@ -1,34 +1,25 @@
 cmake_minimum_required(VERSION 3.10)
 
-# Nom du projet global
-project(StellarEngineProject)
+# Nom du projet
+project(StellarEngine)
 
-# Cible le standard C11
-set(CMAKE_C_STANDARD 11)
-set(CMAKE_C_STANDARD_REQUIRED ON)
-
-# Spécifie les chemins des dossiers pour les sources du moteur et du jeu
-set(ENGINE_DIR ${CMAKE_SOURCE_DIR}/src)
-set(GAME_DIR ${CMAKE_SOURCE_DIR}/Game)
-
-# Ajoute les fichiers sources pour le moteur
-add_library(stellarengine STATIC
-    ${ENGINE_DIR}/engine.c
-)
-
-# Trouve SDL2 et OpenGL
+# Trouver SDL2
 find_package(SDL2 REQUIRED)
-find_package(OpenGL REQUIRED)
 
-# Ajoute les chemins d'inclusion et lie les bibliothèques
-target_include_directories(stellarengine PRIVATE ${SDL2_INCLUDE_DIRS} ${OPENGL_INCLUDE_DIR})
-target_link_libraries(stellarengine ${SDL2_LIBRARIES} ${OPENGL_gl_LIBRARY})
+# Définir le répertoire de build
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-# Ajoute l'exécutable pour le jeu
-add_executable(game
-    ${GAME_DIR}/game.c
+# Inclure les fichiers sources
+set(SOURCES
+    src/engine.c
+    src/level.c
+    game/game.c
 )
 
-# Lie l'exécutable du jeu à la bibliothèque du moteur
-target_link_libraries(game stellarengine)
+# Créer l'exécutable
+add_executable(stellar_engine ${SOURCES})
+
+# Lier SDL2
+target_include_directories(stellar_engine PRIVATE ${SDL2_INCLUDE_DIRS})
+target_link_libraries(stellar_engine PRIVATE ${SDL2_LIBRARIES})
 
