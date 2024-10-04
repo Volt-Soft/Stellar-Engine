@@ -5,28 +5,22 @@ Le jeu aura son propre moteur de jeu, le Stellar Engine.
 
 ## Technologie
 
-Le moteur utilisera [SDL](https://libsdl.com).
-
-## Render, load 
+Le moteur utilisera [SDL](https://libsdl.com) et [LDtk](https://ldtk.io).
 
 ## Étapes
 - [ ] Getstion des I/O
-- [ ] Chargements d'objets 2D
-- [ ] Rendu des objets 2D
 - [ ] Collisions
-- [ ] Gestion et affichage des niveaux
+- [ ] Affichage des niveaux
 
-### Détails des étapes
-
-#### Chargement
+## Chargement
 
 Pour charger des niveaux, l'utilisateur apellera `engineLoadLevel`.
 
-#### Rendu
+## Rendu
 
-Pour rendre la scène 3D, l'utlisateur apellera `engineRenderLevel`.
+Pour rendre le niveau, l'utlisateur apellera `engineRenderLevel`.
 
-#### Inputs
+## Inputs
 
 Pour gérer les entrées et sorties, le moteur utilisera SDL.
 
@@ -41,4 +35,3 @@ Le moteur sera dans un dossier séparé, qui aura `engine.h`, `engine.c`, et qui
 - void engineCleanup();
 - void engineLoadLevel(const char* levelPath, Level* level);
 - void engineRenderLevel(Level* level);
-
