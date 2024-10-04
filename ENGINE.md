@@ -1,7 +1,7 @@
 
 # Stellar Engine
 
-Le jeu aura son propre moteur de jeu, le Stellar Engine. 
+Un moteur de jeu pour Super Stars Align?
 
 ## Technologie
 
@@ -10,7 +10,7 @@ Le moteur utilisera [SDL](https://libsdl.com) et [LDtk](https://ldtk.io).
 ## Étapes
 - [ ] Getstion des I/O
 - [ ] Collisions
-- [ ] Affichage des niveaux
+- [ ] Niveaux
 
 ## Chargement
 
