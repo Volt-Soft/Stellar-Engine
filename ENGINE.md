@@ -8,30 +8,27 @@ Un moteur de jeu pour Super Stars Align.
 Le moteur utilisera [SDL](https://libsdl.com) et [LDtk](https://ldtk.io).
 
 ## Étapes
+
 - [ ] Getstion des I/O
-- [ ] Collisions
 - [ ] Niveaux
+- [ ] API
+- [ ] Musique
 
-## Chargement
+## Niveaux
 
-Pour charger des niveaux, l'utilisateur apellera `engineLoadLevel`.
-
-## Rendu
-
-Pour rendre le niveau, l'utlisateur apellera `engineRenderLevel`.
+Pour jouer le niveau, le moteur utilisera `cLDTK`.
 
 ## Inputs
 
 Pour gérer les entrées et sorties, le moteur utilisera SDL.
 
-## Fonctionnement et structure
+## Structure
 
-Le moteur sera dans un dossier séparé, qui aura `engine.h`, `engine.c`, et qui seront inclus dans le fichier principal du jeu.
+Le moteur sera composé d'`engine.c/h` et de `cLDTK`.
+Il sera inclus par le développeur tiers et utilisera l'API du moteur.
 
 ### Fonctions
 
 - void engineInit();
-- void engineRun();
+- void engineRun("level");
 - void engineCleanup();
-- void engineLoadLevel(const char* levelPath, Level* level);
-- void engineRenderLevel(Level* level);
