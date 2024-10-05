@@ -16,6 +16,7 @@ The engine's development phase has yet started.
 ## Contributing
 
 You can contribute by forking the repo, but be sure to respect the [license](./LICENSE).
+
 ## License
 
 Distribute, modify and use freely under the terms of the [ZLib license](./LICENSE).
