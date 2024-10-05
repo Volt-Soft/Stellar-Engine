@@ -1,7 +1,7 @@
 
 # Stellar Engine
 
-Un moteur de jeu pour Super Stars Align.
+Un framework pour Super Stars Align.
 
 ## Technologie
 
