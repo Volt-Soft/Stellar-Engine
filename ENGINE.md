@@ -5,7 +5,7 @@ Un moteur de jeu pour Super Stars Align.
 
 ## Technologie
 
-Le moteur utilisera [SDL](https://libsdl.com) et [LDtk](https://ldtk.io).
+Le moteur utilisera [Haxe](https://haxe.org) et [LDtk](https://ldtk.io).
 
 ## Étapes
 
@@ -16,15 +16,11 @@ Le moteur utilisera [SDL](https://libsdl.com) et [LDtk](https://ldtk.io).
 
 ## Niveaux
 
-Pour jouer le niveau, le moteur utilisera `cLDTK`.
-
-## Inputs
-
-Pour gérer les entrées et sorties, le moteur utilisera SDL.
+Pour jouer le niveau, le moteur utilisera le loader officiel pour Haxe.
 
 ## Structure
 
-Le moteur sera composé d'`engine.c/h` et de `cLDTK`.
+Le moteur sera composé d'`engine.haxe`.
 Il sera inclus par le développeur tiers et utilisera l'API du moteur.
 
 ### Fonctions

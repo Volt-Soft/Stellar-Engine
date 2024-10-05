@@ -3,7 +3,7 @@
 
 #  Stellar Engine
 
-A 2D game engine made in C and uses SDL.
+A 2D game engine made in Haxe and uses [LDTK](https://ldtk.io).
 
 ## Engine Document
 
@@ -11,9 +11,11 @@ See [ENGINE.md](./ENGINE.md) for further reading (French).
 
 ## Development
 
-The engine's development phase has started, and the Alpha version will soon come out.
+The engine's development phase hasn't started.
 
 ## Contributing
+
+You can contribute by forking this repository, but it should respect the license.
 
 ## License
 
