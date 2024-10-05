@@ -23,8 +23,9 @@ Pour charger les niveaux, le moteur utilisera `tmx`, un importer de maps Tiled.
 Le moteur sera composé d'`engine.c/h`.
 Il sera inclus par le développeur tiers et utilisera l'API du moteur.
 
-### Fonctions
+### API
 
 - void engineInit();
 - void engineRun("level");
-- void engineCleanup();
+- void engineClean();
+- void engineMusic("path");
