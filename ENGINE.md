@@ -5,7 +5,7 @@ Un moteur de jeu pour Super Stars Align.
 
 ## Technologie
 
-Le moteur utilisera [Löve](https://love2d.org) et [LDtk](https://ldtk.io).
+Le moteur utilisera [SDL](https://libsdl.com) et [LDtk](https://ldtk.io).
 
 ## Étapes
 
@@ -16,11 +16,11 @@ Le moteur utilisera [Löve](https://love2d.org) et [LDtk](https://ldtk.io).
 
 ## Niveaux
 
-Pour jouer le niveau, le moteur utilisera le loader officiel pour Haxe.
+Pour charger les niveaux, le moteur utilisera `tmx`, un importer de maps Tiled.
 
 ## Structure
 
-Le moteur sera composé d'`engine.lua`.
+Le moteur sera composé d'`engine.c/h`.
 Il sera inclus par le développeur tiers et utilisera l'API du moteur.
 
 ### Fonctions
