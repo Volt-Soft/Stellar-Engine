@@ -3,7 +3,7 @@
 
 #  Stellar Engine
 
-A 2D game engine made in C and uses SDL.
+A 2D game engine made in Lua with Löve 2D.
 
 ## Engine Document
 
@@ -11,10 +11,11 @@ See [ENGINE.md](./ENGINE.md) for further reading (French).
 
 ## Development
 
-The engine's development phase has started, and the Alpha version will soon come out.
+The engine's development phase has yet started.
 
 ## Contributing
 
+You can contribute by forking the repo, but be sure to respect the [license](./LICENSE).
 ## License
 
 Distribute, modify and use freely under the terms of the [ZLib license](./LICENSE).
