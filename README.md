@@ -3,7 +3,7 @@
 
 #  Stellar Engine
 
-A 2D framework made in C and SDL.
+A 2D game engine made in C and SDL.
 
 
 ## Engine Document
