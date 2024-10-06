@@ -1,7 +1,7 @@
 
 # Stellar Engine
 
-Un framework pour Super Stars Align.
+Un moteur de jeu pour Super Stars Align.
 
 ## Technologie
 
@@ -16,7 +16,7 @@ Le moteur utilisera [SDL](https://libsdl.com) et [LDtk](https://ldtk.io).
 
 ## Niveaux
 
-Pour charger les niveaux, le moteur utilisera `tmx`, un importer de maps Tiled.
+Pour charger les niveaux, le moteur utilisera `tmx`, un importeur de maps Tiled.
 
 ## Structure
 
