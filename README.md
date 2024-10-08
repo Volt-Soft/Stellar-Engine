@@ -3,16 +3,15 @@
 
 #  Stellar Engine
 
-A 2D game framework made in C and SDL.
-
+A 2D game engine made in C and SDL.
 
 ## Engine Document
 
 See [ENGINE.md](./ENGINE.md) for further reading (French).
 
-## Development
+## Status
 
-The engine's development phase has started, but redesigns and reconsiderations over technologies may occur. 
+The engine will be released shortly in `v1.0.0`.
 
 ## License
 
