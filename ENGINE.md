@@ -5,27 +5,21 @@ Un moteur de jeu pour Super Stars Align.
 
 ## Technologie
 
-Le moteur utilisera [SDL](https://libsdl.com) et [LDtk](https://ldtk.io).
+Le moteur utilisera [SDL](https://libsdl.com) en tant que technologie graphique.
 
 ## Étapes
 
 - [ ] Getstion des I/O
-- [ ] Niveaux
 - [ ] API
 - [ ] Musique
 
-## Niveaux
-
-Pour charger les niveaux, le moteur utilisera `tmx`, un importeur de maps Tiled.
-
 ## Structure
 
-Le moteur sera composé d'`engine.c/h`.
+Le framework sera composé d'`stellar.c/h`.
 Il sera inclus par le développeur tiers et utilisera l'API du moteur.
 
 ### API
 
-- void engineInit();
-- void engineRun("level");
-- void engineClean();
-- void engineMusic("path");
+- void stellarInit();
+- void stellarClean();
+- void stellarMusic("path");

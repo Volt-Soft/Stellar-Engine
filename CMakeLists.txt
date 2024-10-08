@@ -1,28 +1,23 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.5)
 
-# Set the project name
-project(StellarEngine)
+project(sdl_example VERSION 1.0.0 LANGUAGES C)
 
-# Find the SDL2 library
-find_package(SDL2 REQUIRED)
+if(MSVC AND NOT VCPKG_TOOLCHAIN)
+  message(FATAL_ERROR "MSVC is only supported when using vcpkg")
+endif()
 
-# Set the source files for the engine and game
-set(ENGINE_SOURCES
-    src/engine.c
-    src/loader.c
-)
+add_executable(sdl_example "src/sdl.c")
 
-set(GAME_SOURCES
-    game.c
-)
+find_package(tmx REQUIRED)
+target_link_libraries(sdl_example PRIVATE tmx)
 
-# Create the executable
-add_executable(StellarEngine ${ENGINE_SOURCES} ${GAME_SOURCES})
-
-# Link SDL2 to the executable
-target_include_directories(StellarEngine PRIVATE ${SDL2_INCLUDE_DIRS})
-target_link_libraries(StellarEngine PRIVATE ${SDL2_LIBRARIES})
-
-# Set C11 standard
-set_property(TARGET StellarEngine PROPERTY C_STANDARD 11)
-
+if(VCPKG_TOOLCHAIN)
+  #find_package(sdl2 REQUIRED) # transitively included?
+  find_package(sdl2-image REQUIRED)
+  target_link_libraries(sdl_example PRIVATE sdl2-image)
+else()
+  find_package(PkgConfig REQUIRED)
+  #pkg_search_module(SDL2 REQUIRED IMPORTED_TARGET sdl2 SDL2_image) # does not work for unknown reasons
+  pkg_search_module(SDL2_IMAGE REQUIRED IMPORTED_TARGET SDL2_image) # transitively includes SDL2
+  target_link_libraries(sdl_example PRIVATE PkgConfig::SDL2_IMAGE)
+endif()
