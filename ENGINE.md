@@ -17,7 +17,7 @@ Le moteur utilisera [SDL](https://libsdl.com) en tant que technologie graphique.
 
 ## Structure
 
-Le moteur sera composé d'`stellar.c/h`.
+Le moteur sera composé de `stellar.c/h`.
 Il sera inclus par le développeur tiers et utilisera l'API du moteur.
 
 ### API
