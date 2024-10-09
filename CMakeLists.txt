@@ -1,29 +1,23 @@
-cmake_minimum_required(VERSION 3.28)
+cmake_minimum_required(VERSION 3.5)
 
-project(StellarEngine C)
+project(sdl_example VERSION 1.0.0 LANGUAGES C)
 
-# Set C standard to C23
-set(CMAKE_C_STANDARD 23)
-
-# Define the executable
-add_executable(StellarEngine "src/loader.c")
-
-# Find and link the TMX library
-find_package(tmx REQUIRED)
-target_link_libraries(StellarEngine PRIVATE tmx)
-
-# Handle different toolchains and dependencies
 if(MSVC AND NOT VCPKG_TOOLCHAIN)
   message(FATAL_ERROR "MSVC is only supported when using vcpkg")
 endif()
 
+add_executable(sdl_example "game.c")
+
+find_package(tmx REQUIRED)
+target_link_libraries(sdl_example PRIVATE tmx)
+
 if(VCPKG_TOOLCHAIN)
-  # Use vcpkg to find and link SDL2_image
+  #find_package(sdl2 REQUIRED) # transitively included?
   find_package(sdl2-image REQUIRED)
-  target_link_libraries(StellarEngine PRIVATE sdl2-image)
+  target_link_libraries(sdl_example PRIVATE sdl2-image)
 else()
-  # Use PkgConfig to find and link SDL2_image and SDL2
   find_package(PkgConfig REQUIRED)
-  pkg_search_module(SDL2_IMAGE REQUIRED IMPORTED_TARGET SDL2_image) # Transitively includes SDL2
-  target_link_libraries(StellarEngine PRIVATE PkgConfig::SDL2_IMAGE)
+  #pkg_search_module(SDL2 REQUIRED IMPORTED_TARGET sdl2 SDL2_image) # does not work for unknown reasons
+  pkg_search_module(SDL2_IMAGE REQUIRED IMPORTED_TARGET SDL2_image) # transitively includes SDL2
+  target_link_libraries(sdl_example PRIVATE PkgConfig::SDL2_IMAGE)
 endif()

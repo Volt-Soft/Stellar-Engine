@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include "include/tmx.h"
-#include <SDL.h>
-#include <SDL_events.h>
-#include <SDL_image.h>
+#include "src/include/tmx.h"
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_events.h>
+#include <SDL2/SDL_image.h>
 
 #define DISPLAY_H 600
 #define DISPLAY_W 800
@@ -204,4 +204,3 @@ int main(int argc, char **argv) {
 
 	return 0;
 }
-

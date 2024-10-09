@@ -23,6 +23,6 @@ Il sera inclus par le développeur tiers et utilisera l'API du moteur.
 ### API
 
 - void stellarInit();
-- void stellarClean();
+- void stellarCleanup();
 - void stellarMusic("file.mp3");
 - void stellarLevel("level.tmx");
