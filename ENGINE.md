@@ -13,7 +13,7 @@ Le moteur utilisera [SDL](https://libsdl.com) en tant que technologie graphique.
 - [ ] Getstion des I/O
 - [ ] API
 - [ ] Musique
-- [ ] Niveaux : Finalisation
+- [x] Niveaux : Finalisation
 
 ## Structure
 
