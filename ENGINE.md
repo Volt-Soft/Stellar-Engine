@@ -10,14 +10,26 @@ Le moteur utilisera [SDL](https://libsdl.com) en tant que technologie graphique.
 
 ## Étapes
 
-- [ ] Getstion des I/O
+- [ ] I/O
+- [ ] TOML Config
 - [ ] API
 - [ ] Musique
-- [x] Niveaux : Finalisation
+- [x] Niveaux
 
+## Configuration
+
+Pseudocode :
+```toml
+[window]
+width = 800
+height = 600
+fullscreen = false
+title = "Stellar Game"
+
+```
 ## Structure
 
-Le moteur sera composé de `stellar.c/h`.
+Le moteur sera composé de `stellar.c/h` ainsi que `game.c`, qui comporte le loader et la logique du jeu.
 Il sera inclus par le développeur tiers et utilisera l'API du moteur.
 
 ### API
@@ -25,4 +37,4 @@ Il sera inclus par le développeur tiers et utilisera l'API du moteur.
 - void stellarInit();
 - void stellarCleanup();
 - void stellarMusic("file.mp3");
-- void stellarLevel("level.tmx");
+- void stellarConfig("config.toml")
