@@ -34,7 +34,6 @@ Il sera inclus par le développeur tiers et utilisera l'API du moteur.
 
 ### API
 
-- [ ] `void stellarCleanup()`
-- [ ] `void stellarMusic("file.mp3")`
+- [x] `void stellarCleanup()`
 - [ ] `void stellarConfig("config.toml")`
 - [ ] `stellarPlayer("player.png")`
