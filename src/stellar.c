@@ -3,7 +3,7 @@
 #include "include/tmx.h"
 
 #if _WIN32
-    #include <SDL2>
+    #include <SDL2.dll>
 
 #else
     #include <SDL2/SDL.h>
