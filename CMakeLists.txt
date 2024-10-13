@@ -9,3 +9,6 @@ add_library(StellarEngine STATIC src/stellar.c
 
 # Final Game
 add_executable(StellarGame game.c)
+
+# Stellar Documentation (doc.tex)
+add_custom_target(StellarDoc latex doc.tex)

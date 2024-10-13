@@ -37,7 +37,7 @@
     pdftitle={Overleaf Example},
     pdfpagemode=FullScreen,
 }
-\usepackage{mathtools, amsfonts, amssymb, amsthm}
+\usepackage{mathtools, amsfonts, amsthm}
 %pour écrire des maths
 \usepackage{geometry}[a4paper,textwidth=160mm,textheight=250mm]
 %pour gérer les marges et les espaces
@@ -65,7 +65,7 @@
     \begin{itemize}
         \item \href{https://ldtk.io/}{LDtk}, un éditeur de niveaux.
         \item  \label{maped} \href{https://github.com/baylej/tmx/}{TMX}, un importeur de cartes \href{https://www.mapeditor.org/}{Tiled}.
-        \item \href{https://libsdl.com}{SDL}, une librairie de développement C.
+        \label{sdl} \item \href{https://libsdl.com}{SDL}, une librairie de développement C.
         \item \label{toml}  \href{https://toml.io/en/}{TOML}, un langage de configuration.
     \end{itemize}
 
@@ -117,6 +117,21 @@
     \end{itemize} \vspace{0.5cm}
 
     L'essentiel est dans le dossier \textbf{\textit{src}}, qui comporte chaque élément de la librairie \textbf{TMX} - qui permet de charger les cartes exportées - dans le sous-dossier \textbf{\textit{include}}, et les fichiers à inclure (\textbf{\textit{stellar.c, stellar.h}}.
+
+    \section{Compilation}
+    Pour compiler le moteur depuis sa source, il faut avoir \ref{sdl} installé. Voici les étapes de compilation : \vspace{0.5cm}
+
+    \begin{lstlisting}
+        git clone https://github.com/Volt-Soft/Stellar-Engine.git
+        cd Stellar-Engine
+        mkdir build
+        cd build
+        cmake ..
+        make
+    \end{lstlisting} \vspace{0.5cm}
+
+    Cela compilera pour Linux et Unix. Il y aura trois fichiers : \textbf{\textit{StellarDoc.pdf}}, \textbf{\textit{StellarEngine.a}} et \textbf{\textit{StellarGame}}.
+
 
     \section{License}
     Le moteur est distribué sous la licence Zlib, qui est une licence permissive permettant une utilisation libre et flexible.
