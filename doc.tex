@@ -1,0 +1,144 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}	%ces deux premiers packages
+\usepackage[T1]{fontenc}		%concernent le formattage
+\usepackage[french]{babel}	%Langue Français
+\usepackage{hyperref}
+\usepackage{listings}
+
+\lstdefinestyle{customc}{
+    belowcaptionskip=1\baselineskip,
+    breaklines=true,
+    frame=L,
+    xleftmargin=\parindent,
+    language=C,
+    showstringspaces=false,
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\bfseries\color{green!40!black},
+    commentstyle=\itshape\color{purple!40!black},
+    identifierstyle=\color{blue},
+    stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customasm}{
+    belowcaptionskip=1\baselineskip,
+    frame=L,
+    xleftmargin=\parindent,
+    language=[x86masm]Assembler,
+    basicstyle=\footnotesize\ttfamily,
+    commentstyle=\itshape\color{purple!40!black},
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+}
+\usepackage{mathtools, amsfonts, amssymb, amsthm}
+%pour écrire des maths
+\usepackage{geometry}[a4paper,textwidth=160mm,textheight=250mm]
+%pour gérer les marges et les espaces
+\usepackage{xcolor}			%pour afficher des parties en couleur
+
+\usepackage{graphicx}
+
+\numberwithin{equation}{section}    % numérotation des eqns selon la section
+
+% Titre
+
+\title{Documentation du Stellar Engine}
+\author{Adam Ellouze}
+
+\begin{document}				%Début du corps du document
+
+    \maketitle
+
+    \section{Stellar Engine}
+    Le Stellar Engine est un moteur de jeu conçu pour le jeu 'Super Stars Align', un jeu Platformer inspiré de \href{https://en.wikipedia.org/wiki/Super_Mario_64}{Super Mario 64}. \vspace{1cm}
+
+    \section{Technologie}
+    Voici une liste détaillée des différentes technologies utilisées dans le Stellar Engine :
+
+    \begin{itemize}
+        \item \href{https://ldtk.io/}{LDtk}, un éditeur de niveaux.
+        \item  \label{maped} \href{https://github.com/baylej/tmx/}{TMX}, un importeur de cartes \href{https://www.mapeditor.org/}{Tiled}.
+        \item \href{https://libsdl.com}{SDL}, une librairie de développement C.
+        \item \label{toml}  \href{https://toml.io/en/}{TOML}, un langage de configuration.
+    \end{itemize}
+
+    \section{Configuration}
+    Le Stellar Engine est (fonctionnalité à venir) configurable à l'aide du langage TOML(\ref{toml}). Voici un exemple de pseudocode :
+
+
+    \begin{lstlisting}
+    [window]
+    width = 800
+    height = 600
+    fullscreen = false
+    title = "Stellar Game"
+    \end{lstlisting}
+
+    \section{Développement tiers}
+    Le développeur tiers - qui utilisera le moteur - devra inclure \textit{\textbf{stellar.c}}  et \textit{\textbf{stellar.h}}, qui comporteront les fonctions suivantes, contituant l'\textit{API} du moteur :
+
+    \begin{lstlisting}
+    void stellarCleanup() // Pour nettoyer le moteur
+    void stellarConfig("config.toml") // Pour charger une configuration
+    stellarPlayer("player.png") // Pour charger un SPRITE de joueur
+    \end{lstlisting}
+
+    \lstinputlisting[caption=Scheduler, style=customc]
+
+    Il devra aussi utiliser les fonctions présentent dans \textit{\textbf{game.c}} pour charger la carte. Des exemples de codes pour l'\textit{I/O} - de l'Anglais Input/Output, Entrées/Sorties des manettes, clavier, souris, etc.. -  seront fournis dans l'optique de simplifier le développement de jeu à l'aide du \textbf{Stellar Engine}.\vspace{0.5cm}
+
+
+    Le développeurs tiers devra programmer une carte avec les éditeurs de carte (\ref{maped}). [...] Voici une liste de choses à faire lors du développement d'un jeu utilisant le moteur : \vspace{0.5cm}
+
+    \begin{enumerate}
+        \item Programmer une carte
+        \item Charger la carte
+        \item Charger les SPRITES de joueur
+        \item Implémenter les I/O
+        \item Implémenter le jeu
+    \end{enumerate}
+
+    \subsection{Structure}
+    La structure du moteur est la suivante : \vspace{0.5cm}
+
+    \begin{itemize}
+        \item src/stellar.c
+        \item src/stellar.h
+        \item src/include/
+        \item CMakeLists.txt
+        \item game.c
+    \end{itemize} \vspace{0.5cm}
+
+    L'essentiel est dans le dossier \textbf{\textit{src}}, qui comporte chaque élément de la librairie \textbf{TMX} - qui permet de charger les cartes exportées - dans le sous-dossier \textbf{\textit{include}}, et les fichiers à inclure (\textbf{\textit{stellar.c, stellar.h}}.
+
+    \section{License}
+    Le moteur est distribué sous la licence Zlib, qui est une licence permissive permettant une utilisation libre et flexible.
+
+    \begin{lstlisting}
+        Copyright (c) 2024 Adam Ellouze <elzadam11@gmail.com>
+
+This software is provided 'as-is', without any express or implied
+warranty. In no event will the authors be held liable for any damages
+arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+1. The origin of this software must not be misrepresented; you must not
+   claim that you wrote the original software. If you use this software
+   in a product, an acknowledgment in the product documentation would be
+   appreciated but is not required.
+2. Altered source versions must be plainly marked as such, and must not be
+   misrepresented as being the original software.
+3. This notice may not be removed or altered from any source distribution.
+    \end{lstlisting}
+
+\end{document}				      %Fin  

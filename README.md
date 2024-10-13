@@ -7,7 +7,7 @@ A 2D game engine made in C and SDL.
 
 ## Engine Document
 
-See [ENGINE.md](./ENGINE.md) for further reading (French).
+See [ENGINE.md](ENGINE.md) for further reading (French).
 
 ## Status
 The Engine is released in `v1.0.0`, Alpha.
