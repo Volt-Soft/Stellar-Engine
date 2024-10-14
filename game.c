@@ -1,8 +1,17 @@
 #include <stdio.h>
+
+#include "src/stellar.h"
 #include "src/include/tmx.h"
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_events.h>
-#include <SDL2/SDL_image.h>
+
+#ifdef _WIN32
+	#include <C:/SDL2/include/SDL.h>
+	#include <C:/SDL2/include/SDL_events.h>
+	#include <C:/SDL2_image/include/SDL_image.h>
+#else
+	#include <SDL2/SDL.h>
+	#include <SDL2/SDL_events.h>
+	#include <SDL2/SDL_image.h>
+#endif
 
 #define DISPLAY_H 600
 #define DISPLAY_W 800
@@ -195,12 +204,7 @@ int main(int argc, char **argv) {
 		SDL_RenderPresent(ren);
 	}
 
-	tmx_map_free(map);
-
-	SDL_RemoveTimer(timer_id);
-	SDL_DestroyRenderer(ren);
-	SDL_DestroyWindow(win);
-	SDL_Quit();
+	stellarCleanup();
 
 	return 0;
 }

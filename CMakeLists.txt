@@ -3,6 +3,9 @@ project(StellarGame C)
 
 set(CMAKE_C_STANDARD 23)
 
+# SDL
+include_directories(C:/SDL2/include)
+
 # Engine Library
 add_library(StellarEngine STATIC src/stellar.c
         src/stellar.h)
@@ -10,5 +13,5 @@ add_library(StellarEngine STATIC src/stellar.c
 # Final Game
 add_executable(StellarGame game.c)
 
-# Stellar Documentation (doc.tex)
-add_custom_target(StellarDoc latex doc.tex)
+# Stellar Documentation
+add_custom_target(StellarDoc doc.tex)
