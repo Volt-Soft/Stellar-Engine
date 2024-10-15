@@ -5,8 +5,8 @@ Un moteur de jeu pour Super Stars Align.
 
 ## Technologie
 
-Le moteur utilisera [Haxe](https://haxe.org) et [HaxeFlixel](https://haxeflixel.com/).
-Le moteur chargera [LDtk](https://ldtk.io).
+Le moteur utilisera [Haxe](https://haxe.org) et [OpenFL](https://openfl.org/).
+Le moteur chargera des niveaux [LDtk](https://ldtk.io).
 
 ## Étapes
 
