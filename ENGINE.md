@@ -5,16 +5,16 @@ Un moteur de jeu pour Super Stars Align.
 
 ## Technologie
 
-Le moteur utilisera [SDL](https://libsdl.com) en tant que technologie graphique.
-[Tiled](https://www.mapeditor.org/) et [LDtk](https://ldtk.io) seront les éditeurs de niveaux pour le moteur.
+Le moteur utilisera [Haxe](https://haxe.org) et [HaxeFlixel](https://haxeflixel.com/).
+Le moteur chargera [LDtk](https://ldtk.io).
 
 ## Étapes
 
 - [ ] I/O
 - [ ] TOML Config
-- [ ] API
 - [ ] Musique
-- [x] Niveaux
+- [ ] Niveaux
+- [ ] Apprendre Haxe
 
 ## Configuration
 
@@ -29,11 +29,10 @@ title = "Stellar Game"
 ```
 ## Structure
 
-Le moteur sera composé de `stellar.c/h` ainsi que `game.c`, qui comporte le loader et la logique du jeu.
-Il sera inclus par le développeur tiers et utilisera l'API du moteur.
+Le moteur sera une librairie à inclure dans `game.hx`. Il sera dans le répertoire `stellar`.
 
 ### API
 
-- [x] `void stellarCleanup()`
-- [ ] `void stellarConfig("config.toml")`
+- [ ] `stellarConfig("config.toml")`
 - [ ] `stellarPlayer("player.png")`
+- [ ] `stellarMusic("file.mp3")`
