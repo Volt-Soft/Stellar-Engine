@@ -1,0 +1,26 @@
+# The main class that contains your entry point (Main.hx)
+-main Main
+
+# Class paths, make sure src is included to access Main.hx
+-cp src
+
+# Add the assets directory
+--resource assets/level.ldtk@level.ldtk
+--resource assets/tileset.png@tileset.png
+
+# Add OpenFL and LDtk Haxe API libraries
+-lib openfl
+-lib ldtk-haxe-api
+
+# Target a specific platform (e.g., "neko" or "html5")
+-neko bin/Main.n
+
+# Or alternatively, you can target HTML5:
+# -html5 bin/html5
+
+# Automatically opens the project in a browser or run it when the build succeeds
+# --run
+
+# Output directory for binaries and compiled files
+# --output bin/
+

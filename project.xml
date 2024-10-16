@@ -1,0 +1,5 @@
+<haxelib name="openfl" />
+<haxelib name="ldtk-haxe-api" />
+
+<assets path="assets" />
+
